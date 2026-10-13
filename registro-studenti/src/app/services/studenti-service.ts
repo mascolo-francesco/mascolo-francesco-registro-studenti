@@ -4,11 +4,11 @@ import { Studente } from '../modelli/studente';
 @Service()
 export class StudentiService {
   private readonly dati = signal<Studente[]>([
-    { id: 1, nome: 'Luca Bianchi', classe: '4B', mediaVoti: 7.5 },
-    { id: 2, nome: 'Sara Rossi', classe: '4B', mediaVoti: 5.8 },
-    { id: 3, nome: 'Marco Verdi', classe: '4A', mediaVoti: 8.2 },
-    { id: 4, nome: 'Giulia Neri', classe: '4A', mediaVoti: 6.4 },
-    { id: 5, nome: 'Paolo Russo', classe: '4B', mediaVoti: 4.9 },
+    { id: 1, nome: 'Alex Barbarini', classe: '4B', mediaVoti: 7.5 },
+    { id: 2, nome: 'Federico Cupardo', classe: '4B', mediaVoti: 5.8 },
+    { id: 3, nome: 'Angelo Franco', classe: '4A', mediaVoti: 8.2 },
+    { id: 4, nome: 'Roberto Grande', classe: '4A', mediaVoti: 6.4 },
+    { id: 5, nome: 'Jhon Carlo Guevarra', classe: '4B', mediaVoti: 4.9 },
   ]);
 
   readonly studenti = this.dati.asReadonly();
