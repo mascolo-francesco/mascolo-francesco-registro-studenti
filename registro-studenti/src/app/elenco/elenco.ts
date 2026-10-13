@@ -20,6 +20,14 @@ export class Elenco {
     }
     return tutti.filter(s => s.classe.toUpperCase() === filtro);
   });
+  readonly ordine = signal<'nome' | 'media'>('nome');
+  readonly visibili = computed(() => {
+    const copia = [...this.filtrati()];
+    if (this.ordine() === 'nome') {
+      return copia.sort((a, b) => a.nome.localeCompare(b.nome));
+    }
+    return copia.sort((a, b) => b.mediaVoti - a.mediaVoti);
+  });
 
   rimuovi(id: number): void {
     this.studentiService.rimuovi(id);
